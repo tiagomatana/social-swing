@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding:0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+#body{
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: linear-gradient(360deg, rgba(200,14,94,10) 1%, rgba(1,21,80,1) 98%);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
