@@ -1,0 +1,122 @@
+<div fxLayout="column" fxFlexFill>
+  <div class="section" fxLayout="row" fxLayoutAlign="center center">
+    <h5 class="mat-display-1">Por favor, Preencha o Formulário</h5>
+  </div>
+
+  <div class="container" fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+    <div class="mat-elevation-z6 container" fxLayout="row" fxLayoutAlign="center center" fxFlex
+         style="display: inline-block; padding: 32px 48px 0px 48px;">
+
+      <form fxFlex="100" [formGroup]="registerForm" fxLayout="column">
+        <p class="mat-title">CRIAR CONTA</p>
+
+        <table fxFill class="full-width">
+          <tr fxFlexFill>
+            <td>
+              <mat-form-field appearance="standard" fxFill>
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="name" placeholder="Primeiro nome">
+              </mat-form-field>
+            </td>
+            <th></th>
+            <td>
+              <mat-form-field appearance="standard" fxFill>
+                <mat-label>Sobrenome</mat-label>
+                <input matInput formControlName="surname" placeholder="Último sobrenome">
+              </mat-form-field>
+            </td>
+          </tr>
+
+
+        </table>
+
+
+        <div fxLayout.gt-sm="row" fxLayout="column" fxFlex>
+
+          <mat-form-field appearance="standard" fxFill>
+            <mat-label>E-mail</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="meuemail@exemplo.com">
+            <mat-icon matSuffix>mail</mat-icon>
+          </mat-form-field>
+        </div>
+
+
+        <table fxFill class="full-width">
+          <tr fxFlexFill>
+            <td>
+
+          <mat-form-field appearance="standard" fxFill>
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthdate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+            </td>
+            <th></th>
+          <td>
+            <mat-form-field appearance="standard" fxFill>
+              <mat-label>Gênero</mat-label>
+              <mat-select formControlName="genre">
+                <mat-option value="m">
+                  Masculino
+                </mat-option>
+                <mat-option value="f">
+                  Feminino
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          </tr>
+
+        </table>
+
+        <table fxFill class="full-width">
+          <tr fxFlexFill>
+            <td>
+              <mat-form-field appearance="standard" fxFill>
+                <mat-label>Informe uma senha</mat-label>
+                <input matInput [type]="isShowOne ? 'text' : 'password'" formControlName="password">
+                <mat-icon matSuffix *ngIf="!isShowOne" (click)="isShowOne = !isShowOne" style="cursor: pointer">visibility
+                </mat-icon>
+                <mat-icon matSuffix *ngIf="isShowOne" (click)="isShowOne = !isShowOne" style="cursor: pointer">
+                  visibility_off
+                </mat-icon>
+              </mat-form-field>
+            </td>
+            <th></th>
+            <td>
+              <mat-form-field appearance="standard" fxFill>
+                <mat-label>Confirme sua senha</mat-label>
+                <input matInput [type]="isShowTwo ? 'text' : 'password'" formControlName="confirm">
+                <mat-icon matSuffix *ngIf="!isShowTwo" (click)="isShowTwo = !isShowTwo" style="cursor: pointer">visibility
+                </mat-icon>
+                <mat-icon matSuffix *ngIf="isShowTwo" (click)="isShowTwo = !isShowTwo" style="cursor: pointer">
+                  visibility_off
+                </mat-icon>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+
+        <br/>
+
+        <div fxLayout="row" fxFill fxLayoutGap="15" fxLayoutAlign="space-around center">
+                    <button mat-raised-button color="primary" (click)="save()" fxFlex>CADASTRAR</button>
+        </div>
+
+        <br/>
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+
+          <a color="accent" routerLink="/">Já possuo uma conta</a>
+
+        </div>
+        <br>
+      </form>
+
+
+    </div>
+  </div>
+
+
+</div>
+

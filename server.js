@@ -10,3 +10,4 @@ res.sendFile(path.join(`${__dirname}/dist/${nomeApp}/index.html`));
 });
 
 app.listen(process.env.PORT || 8080);
+console.log(`Line 13: ${process.env.npm_package_name} is running at port ${process.env.PORT || 8080}`)
