@@ -5,6 +5,16 @@
   color: #fff;
   font-size: medium;
 }
+.grid-container{
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+
+  width: 100%;
+}
+
+.grid-item {
+  width: 33%;
+}
 
 /*.container {*/
 /*  max-width: 550px;*/
