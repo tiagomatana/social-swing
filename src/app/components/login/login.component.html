@@ -1,26 +1,26 @@
-<div fxLayout="column" fxFlexFill>
-  <div class="section" fxLayout="row" fxLayoutAlign="center center">
+<div>
+  <div class="section">
     <h5 class="mat-display-1">Por favor, Faça Login</h5>
   </div>
 
-  <div class="container" fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
-    <div class="mat-elevation-z6 container" fxLayout="row" fxLayoutAlign="center center" fxFlex
-         style="display: inline-block; padding: 32px 48px 0px 48px;">
+  <div class="container" fxLayout="row">
+    <div class="mat-elevation-z6 container"
+         style=" padding: 32px 48px 0px 48px;">
 
-      <form fxFlex="100" [formGroup]="loginForm" fxLayout="column">
+      <form [formGroup]="loginForm" >
         <p class="mat-title">LOGIN</p>
 
 
-        <div fxLayout="column" fxFlex>
 
-          <mat-form-field appearance="standard" fxFill>
+
+          <mat-form-field appearance="standard" class="full-width">
             <mat-label>E-mail</mat-label>
             <input matInput type="email" formControlName="email" placeholder="meuemail@exemplo.com">
             <mat-icon matSuffix>mail</mat-icon>
           </mat-form-field>
 
 
-        <mat-form-field appearance="standard" fxFill>
+        <mat-form-field appearance="standard" class="full-width">
           <mat-label>Informe sua senha</mat-label>
           <input matInput [type]="isShow ? 'text':'password'" formControlName="password">
           <mat-icon matSuffix *ngIf="!isShow" (click)="isShow = !isShow" style="cursor: pointer">visibility
@@ -28,15 +28,17 @@
           <mat-icon matSuffix *ngIf="isShow" (click)="isShow = !isShow" style="cursor: pointer">
             visibility_off
           </mat-icon>
-          <mat-hint fxFlexOffset.gt-xs="60" fxFlexOffset="35" class="mat-caption" style="text-decoration: underline" ><a routerLink="/recovery-password">Esqueci minha senha.</a></mat-hint>
         </mat-form-field>
-        </div>
+        <br>
+        <mat-hint class="mat-caption" style="text-decoration: underline" ><a routerLink="/recovery-password">Esqueci minha senha.</a></mat-hint>
+
 
 
 
         <br/>
+        <br/>
 
-        <div fxLayout="row" fxFill fxLayoutGap="15" fxLayoutAlign="space-around center">
+        <div>
           <button mat-raised-button color="primary" fxFlex>ENTRAR</button>
         </div>
         <br/>
