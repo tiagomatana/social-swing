@@ -16,10 +16,13 @@
   width: 33%;
 }
 
-.container {
-  min-width: 350px;
+@media screen and (min-width: 960px) {
+  .container {
+    min-width: 420px;
 
+  }
 }
+
 
 th {
   padding-right: 20px !important;
