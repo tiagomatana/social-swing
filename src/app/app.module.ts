@@ -18,6 +18,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatDividerModule,
     MatButtonModule,
     FormsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatToolbarModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
