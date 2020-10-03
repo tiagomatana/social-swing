@@ -3,8 +3,8 @@
     <h5 class="mat-display-1">Por favor, Preencha o Formulário</h5>
   </div>
 
-  <div class="container" fxFlex="">
-    <div class="mat-elevation-z6 container" style="padding: 32px 48px 0px 48px;" >
+  <div class="container">
+    <div class="mat-elevation-z6 container" style="padding: 32px 48px 0px 48px;">
 
       <form [formGroup]="registerForm">
         <p class="mat-title">CRIAR CONTA</p>
@@ -33,11 +33,11 @@
 
         <mat-form-field appearance="standard" class="full-width">
           <mat-label>Data de nascimento</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="birthdate">
+          <input matInput [matDatepicker]="picker" [max]="maxDate" formControlName="birthdate">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-<br>
+        <br>
         <mat-form-field appearance="standard" class="full-width">
           <mat-label>Gênero</mat-label>
           <mat-select formControlName="genre">
@@ -50,7 +50,7 @@
           </mat-select>
         </mat-form-field>
 
-<br>
+        <br>
         <mat-form-field appearance="standard" class="full-width">
           <mat-label>Informe uma senha</mat-label>
           <input matInput [type]="isShowOne ? 'text' : 'password'" formControlName="password">
@@ -61,7 +61,7 @@
             visibility_off
           </mat-icon>
         </mat-form-field>
-<br>
+        <br>
         <mat-form-field appearance="standard" class="full-width">
           <mat-label>Confirme sua senha</mat-label>
           <input matInput [type]="isShowTwo ? 'text' : 'password'" formControlName="confirm">
@@ -81,11 +81,10 @@
         </div>
 
         <br/>
-        <div fxLayout="row">
-
-          <a color="accent" routerLink="/">Já possuo uma conta</a>
-
-        </div>
+          <mat-hint class="mat-caption" style="text-decoration: underline">
+            <span fxFlex></span>
+            <a color="accent" routerLink="/" style="text-decoration: underline">Já possuo uma conta</a>
+          </mat-hint>
         <br>
       </form>
 

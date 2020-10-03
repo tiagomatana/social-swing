@@ -17,10 +17,13 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('', Validators.required),
     confirm: new FormControl('', Validators.required)
   }, {validators: this.checkPasswords});
+
+  maxDate = new Date();
+
   constructor() { }
 
   ngOnInit(): void {
-
+    this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
 
   checkPasswords(group: FormGroup): any { // here we have the 'passwords' group

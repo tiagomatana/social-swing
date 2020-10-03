@@ -16,11 +16,10 @@
   width: 33%;
 }
 
-/*.container {*/
-/*  max-width: 550px;*/
-/*  display: inline-flex;*/
-/*  position: relative;*/
-/*}*/
+.container {
+  min-width: 350px;
+
+}
 
 th {
   padding-right: 20px !important;
@@ -83,6 +82,22 @@ body, html {
   height: 60px;
 
   background-color: transparent !important;
+}
+
+.mat-option-text {
+  color: #000 !important;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical), .cdk-keyboard-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical), .cdk-program-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.mat-calendar-body-disabled>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
+  color: rgba(0, 0,0,0.3) !important;
 }
 
 
