@@ -3,7 +3,22 @@
   margin: 0;
   padding:0;
   color: #fff;
-  font-size: large;
+  font-size: medium;
+}
+
+.container {
+  max-width: 550px;
+  display: inline-flex;
+  position: relative;
+}
+
+th {
+  padding-right: 20px !important;
+}
+
+a {
+  text-decoration: none !important;
+  font-weight: lighter;
 }
 
 ::placeholder {
@@ -17,11 +32,11 @@
 /*.mat-form-field-ripple{*/
 /*  background-color: rgba(255, 255, 255, 60) !important;*/
 /*}*/
-.mat-calendar-table-header th, .mat-calendar-controls .mat-button-wrapper{
+.mat-calendar-table-header th, .mat-calendar-controls .mat-button-wrapper, .mat-focus-indicator{
   color: #000 !important;
 }
 
-.mat-select-arrow-wrapper {
+.mat-select-arrow {
   color: #fff !important;
 }
 
