@@ -6,11 +6,11 @@
   font-size: medium;
 }
 
-.container {
-  max-width: 550px;
-  display: inline-flex;
-  position: relative;
-}
+/*.container {*/
+/*  max-width: 550px;*/
+/*  display: inline-flex;*/
+/*  position: relative;*/
+/*}*/
 
 th {
   padding-right: 20px !important;
