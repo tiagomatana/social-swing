@@ -2,6 +2,31 @@
 * {
   margin: 0;
   padding:0;
+  color: #fff;
+  font-size: large;
+}
+
+::placeholder {
+  color: #b1adad !important;
+}
+
+.mat-form-field-underline {
+  background-color: rgba(255, 255, 255, 5) !important;
+}
+
+/*.mat-form-field-ripple{*/
+/*  background-color: rgba(255, 255, 255, 60) !important;*/
+/*}*/
+.mat-calendar-table-header th, .mat-calendar-controls .mat-button-wrapper{
+  color: #000 !important;
+}
+
+.mat-select-arrow-wrapper {
+  color: #fff !important;
+}
+
+button {
+  color: #fff !important;
 }
 
 body, html {
@@ -21,4 +46,68 @@ body, html {
   background: linear-gradient(360deg, rgba(200,14,94,10) 1%, rgba(1,21,80,1) 98%);
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+.btn-primary {
+  background: rgba(1,21,80,1) !important;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  padding-left: 25px;
+  padding-right: 25px;
+  align-items: center;
+  font-weight: 600;
+}
+
+
+.input-field input[type=date]:focus + label,
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field input[type=password]:focus + label {
+  color: #e91e63;
+}
+
+.input-field input[type=date]:focus,
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus {
+  border-bottom: 2px solid #e91e63;
+  box-shadow: none;
+}
+
+.mat-select-panel{
+  background-color: rgba(0, 0,0, 0.4) !important;
+  border: 1px solid white;
+  border-radius: 10px !important;
+}
+
+.mat-option:hover {
+  background-color: whitesmoke !important;
+}
+
+.mat-option:hover .mat-option-text {
+  color: black !important;
+}
+
+select::-ms-expand {
+  display: none !important; /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
+}
+
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #fb8c00 !important;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.full-width {
+  width: 100%;
 }

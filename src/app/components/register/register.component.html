@@ -1,0 +1,97 @@
+<div fxLayout="column" fxFill>
+  <div class="section" fxLayout="row" fxLayoutAlign="center center">
+    <h5 class="mat-display-1">Por favor, Preencha o Formulário</h5>
+  </div>
+
+  <div class="container" fxLayout="column" fxLayoutAlign="center center" fxFlex>
+    <div class="mat-elevation-z6" fxLayout="column" style="display: inline-block; padding: 32px 48px 0px 48px;">
+
+      <form class="col s12" [formGroup]="registerForm">
+        <p class="mat-title">CRIAR CONTA</p>
+
+        <table class="full-width" cellspacing="0" fxFill>
+          <tr fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="space-between">
+            <td>
+              <mat-form-field appearance="standard" fxFill>
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="name" placeholder="Primeiro nome">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="standard" fxFill>
+                <mat-label>Sobrenome</mat-label>
+                <input matInput formControlName="surname" placeholder="Último sobrenome">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+
+        <div fxFill>
+          <mat-form-field appearance="standard" fxFill>
+            <mat-label>E-mail</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="meuemail@exemplo.com">
+            <mat-icon matSuffix>mail</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <table class="full-width" cellspacing="0" fxFill>
+          <tr fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="space-between">
+            <th>
+              <mat-form-field appearance="standard" fxFill>
+                <mat-label class="mat-caption">Data de nascimento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthdate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </th>
+            <td>
+              <mat-form-field appearance="standard" fxFill>
+                <mat-label>Gênero</mat-label>
+                <mat-select formControlName="genre">
+                  <mat-option value="m">
+                    Masculino
+                  </mat-option>
+                  <mat-option value="f">
+                    Feminino
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+
+        <div fxFill>
+          <mat-form-field appearance="standard" fxFill>
+            <mat-label>Informe uma senha</mat-label>
+            <input matInput [type]="isShowOne ? 'text' : 'password'" formControlName="password">
+            <mat-icon matSuffix *ngIf="!isShowOne" (click)="isShowOne = !isShowOne" style="cursor: pointer">visibility</mat-icon>
+            <mat-icon matSuffix *ngIf="isShowOne" (click)="isShowOne = !isShowOne" style="cursor: pointer">visibility_off</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div fxFill>
+          <mat-form-field appearance="standard" fxFill>
+            <mat-label>Confirme sua senha</mat-label>
+            <input matInput [type]="isShowTwo ? 'text' : 'password'" formControlName="confirm">
+            <mat-icon matSuffix *ngIf="!isShowTwo" (click)="isShowTwo = !isShowTwo" style="cursor: pointer">visibility</mat-icon>
+            <mat-icon matSuffix *ngIf="isShowTwo" (click)="isShowTwo = !isShowTwo" style="cursor: pointer">visibility_off</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <br/>
+
+        <div fxLayout="row" fxFill fxLayoutGap="15" fxLayoutAlign="space-around center">
+          <button mat-raised-button color="accent" routerLink="/login" fxFlex>VOLTAR</button>
+          <span fxFlex="5"></span>
+          <button mat-raised-button color="primary" (click)="save()" fxFlex>CADASTRAR</button>
+        </div>
+        <br/>
+      </form>
+
+
+    </div>
+  </div>
+
+
+  </div>
+
