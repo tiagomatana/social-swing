@@ -19,13 +19,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RecoveryPasswordComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
