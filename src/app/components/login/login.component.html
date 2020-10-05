@@ -1,9 +1,9 @@
 <div class="flex-container" fxLayout="column" fxLayoutAlign="space-around center">
   <div class="section">
-    <h5 class="mat-display-1">Por favor, Faça Login</h5>
+<h5 class="mat-display-1" style="text-align:center;">Coloque seus dados de acesso</h5>
   </div>
 
-  <div class="container">
+  <div class="container" style="margin-top: -3%;">
     <div class="mat-elevation-z6 container" style=" padding: 32px 48px 0px 48px;">
 
       <form [formGroup]="loginForm" >
@@ -35,11 +35,11 @@
         <br/>
 
         <div>
-          <button mat-raised-button color="primary" fxFlex>ENTRAR</button>
+          <button mat-raised-button color="primary" fxFlex class="ripple">ENTRAR</button>
         </div>
         <br/>
         <div class='row mat-caption'>
-          <button mat-raised-button color="accent" routerLink="/register" fxFlex>REGISTRE-SE</button>
+          <button mat-raised-button color="accent" routerLink="/register" fxFlex class="ripple">REGISTRE-SE</button>
         </div>
         <br>
       </form>
@@ -49,9 +49,3 @@
 
 
 </div>
-
-
-
-
-
-
