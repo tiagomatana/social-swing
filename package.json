@@ -9,7 +9,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "preinstall": "rm -rf dist",
     "postinstall": "ng build --aot --prod"
   },
   "engines": {
