@@ -3,8 +3,10 @@
     <h6 class="mat-display-1">Por favor, Preencha o Formulário</h6>
   </div>
 
-  <div class="container">
-    <div class="mat-elevation-z6 container" style="padding: 32px 48px 0px 48px;">
+  <div class="container" fxLayout="row" fxFlexFill="">
+    <span fxFlex.gt-sm="30" fxFlex.gt-xs="15" fxFlex.gt-lg="40"></span>
+
+    <div class="mat-elevation-z6 container" fxFlex="" style="padding: 32px 48px 0px 48px;">
 
       <form [formGroup]="registerForm">
         <p class="mat-title">CRIAR CONTA</p>
@@ -46,6 +48,9 @@
             </mat-option>
             <mat-option value="f">
               Feminino
+            </mat-option>
+            <mat-option value="o">
+              Outro
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -90,6 +95,8 @@
 
 
     </div>
+    <span fxFlex.gt-sm="30" fxFlex.gt-xs="15" fxFlex.gt-lg="40"></span>
+
   </div>
 
 

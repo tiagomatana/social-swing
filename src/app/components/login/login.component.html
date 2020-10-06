@@ -1,34 +1,33 @@
 <div class="flex-container" fxLayout="column" fxLayoutAlign="space-around center">
   <div class="section">
-<h5 class="mat-display-1" style="text-align:center;">Coloque seus dados de acesso</h5>
+    <h5 class="mat-display-1" style="text-align:center;">Coloque seus dados de acesso</h5>
   </div>
 
-  <div class="container" style="margin-top: -3%;">
-    <div class="mat-elevation-z6 container" style=" padding: 32px 48px 0px 48px;">
+  <div class="container" fxLayout="row" fxFlexFill="">
+    <span fxFlex.gt-sm="30" fxFlex.gt-xs="15" fxFlex.gt-lg="40"></span>
 
-      <form [formGroup]="loginForm" >
+    <div class="mat-elevation-z6 container" style=" padding: 32px 48px  0px 48px;" fxFlex="">
+
+      <form [formGroup]="loginForm">
         <p class="mat-title">LOGIN</p>
 
-          <mat-form-field appearance="standard" class="full-width">
-            <mat-label>E-mail</mat-label>
-            <input matInput type="email" formControlName="email" placeholder="meuemail@exemplo.com">
-            <mat-icon matSuffix>mail</mat-icon>
-          </mat-form-field>
+        <mat-form-field appearance="standard" class="full-width">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="meuemail@exemplo.com">
+          <mat-icon matSuffix>mail</mat-icon>
+        </mat-form-field>
 
 
         <mat-form-field appearance="standard" class="full-width">
           <mat-label>Informe sua senha</mat-label>
-          <input matInput [type]="isShow ? 'text':'password'" formControlName="password">
-          <mat-icon matSuffix *ngIf="!isShow" (click)="isShow = !isShow" style="cursor: pointer">visibility
-          </mat-icon>
-          <mat-icon matSuffix *ngIf="isShow" (click)="isShow = !isShow" style="cursor: pointer">
-            visibility_off
+          <input matInput type="{{isShow ? 'text':'password'}}" formControlName="password">
+          <mat-icon matSuffix (click)="isShow = !isShow"
+                    style="cursor: pointer">{{ isShow ? 'visibility' : 'visibility_off'}}
           </mat-icon>
         </mat-form-field>
         <br>
-        <mat-hint class="mat-caption" style="text-decoration: underline" ><span fxFlex></span> <a routerLink="/recovery-password">Esqueci minha senha.</a></mat-hint>
-
-
+        <mat-hint class="mat-caption" style="text-decoration: underline"><span fxFlex></span> <a
+          routerLink="/recovery-password">Esqueci minha senha.</a></mat-hint>
 
 
         <br/>
@@ -38,13 +37,15 @@
           <button mat-raised-button color="primary" fxFlex class="ripple">ENTRAR</button>
         </div>
         <br/>
-        <div class='row mat-caption'>
+        <div class='row'>
           <button mat-raised-button color="accent" routerLink="/register" fxFlex class="ripple">REGISTRE-SE</button>
         </div>
         <br>
       </form>
 
     </div>
+    <span fxFlex.gt-sm="30" fxFlex.gt-xs="15" fxFlex.gt-lg="40"></span>
+
   </div>
 
 

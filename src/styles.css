@@ -16,12 +16,14 @@
   width: 33%;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 800px) {
   .container {
-    min-width: 420px;
-
+    min-width: 450px;
   }
+
 }
+
+
 
 
 th {
@@ -88,7 +90,7 @@ body, html {
 }
 
 .mat-option-text {
-  color: #000 !important;
+  color: #ffffff !important;
 }
 
 main {
@@ -120,7 +122,7 @@ main {
 }
 
 .mat-select-panel{
-  background-color: rgba(0, 0,0, 0.4) !important;
+  background-color: rgba(0, 0,0, 0.8) !important;
   border: 1px solid white;
   border-radius: 10px !important;
 }
