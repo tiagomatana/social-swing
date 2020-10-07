@@ -20,6 +20,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ProfileComponent } from './components/profile/profile.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HeaderInterceptor} from './interceptors/header.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { ProfileComponent } from './components/profile/profile.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -48,7 +51,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     MatToolbarModule
   ],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
