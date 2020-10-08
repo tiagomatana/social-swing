@@ -28,13 +28,10 @@
         <br>
         <mat-hint class="mat-caption" style="text-decoration: underline"><span fxFlex></span> <a
           routerLink="/recovery-password">Esqueci minha senha.</a></mat-hint>
-
-
         <br/>
         <br/>
-
         <div>
-          <button mat-raised-button color="primary" fxFlex class="ripple" (click)="login()">ENTRAR</button>
+          <button mat-raised-button color="primary" fxFlex class="ripple" [disabled]="!loginForm.valid" (click)="login()">ENTRAR</button>
         </div>
         <br/>
         <div class='row'>
@@ -45,8 +42,6 @@
 
     </div>
     <span fxFlex.gt-sm="30" fxFlex.gt-xs="15" fxFlex.gt-lg="40"></span>
-
   </div>
-
-
 </div>
+<ngx-loading [show]="loading"></ngx-loading>

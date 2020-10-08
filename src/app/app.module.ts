@@ -22,6 +22,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ProfileComponent } from './components/profile/profile.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderInterceptor} from './interceptors/header.interceptor';
+import {AuthGuard} from './security/auth.guard';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {ngxLoadingAnimationTypes, NgxLoadingModule} from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -48,9 +51,20 @@ import {HeaderInterceptor} from './interceptors/header.interceptor';
     MatButtonModule,
     FormsModule,
     MatGridListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSnackBarModule,
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.circleSwish,
+      fullScreenBackdrop: true,
+      backdropBackgroundColour: 'rgba(1,21,80,0.8)',
+      backdropBorderRadius: '4px',
+      primaryColour: '#c80e5e',
+      secondaryColour: '#ffffff',
+      tertiaryColour: '#011550'
+    })
   ],
   providers: [
+    AuthGuard,
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
     { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true}
   ],

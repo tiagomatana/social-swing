@@ -4,13 +4,14 @@ import {LoginComponent} from './components/login/login.component';
 import {RecoveryPasswordComponent} from './components/recovery-password/recovery-password.component';
 import {RegisterComponent} from './components/register/register.component';
 import {ProfileComponent} from './components/profile/profile.component';
+import {AuthGuard} from './security/auth.guard';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    redirectTo: 'login'
   },
   {
     path: 'login',
@@ -18,7 +19,8 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'register',
@@ -27,6 +29,10 @@ const routes: Routes = [
   {
     path: 'recovery-password',
     component: RecoveryPasswordComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
   }
 ];
 
