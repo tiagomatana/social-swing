@@ -18,7 +18,23 @@ export class ClientService {
   };
 
   public login(data): Observable<any> {
-    return this.http.post(`${environment.local}/user/login`, JSON.stringify(data), this.httpOptions)
+    return this.http.post(`${environment.api}/user/login`, JSON.stringify(data), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+
+  public create(data): Observable<any> {
+    return this.http.post(`${environment.api}/user/create`, JSON.stringify(data), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+
+  public recoveryPass(data): Observable<any> {
+    return this.http.post(`${environment.api}/user/recovery`, JSON.stringify(data), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
@@ -29,7 +45,7 @@ export class ClientService {
   // tslint:disable-next-line:typedef
   errorHandl(error) {
     let errorMessage = '';
-    if(error.error instanceof ErrorEvent) {
+    if (error.error instanceof ErrorEvent) {
       // Get client-side error
       errorMessage = error.error.message;
     } else {

@@ -23,8 +23,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderInterceptor} from './interceptors/header.interceptor';
 import {AuthGuard} from './security/auth.guard';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from '@angular/material/snack-bar';
 import {ngxLoadingAnimationTypes, NgxLoadingModule} from 'ngx-loading';
+import { HomeComponent } from './components/home/home.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import {ngxLoadingAnimationTypes, NgxLoadingModule} from 'ngx-loading';
     LoginComponent,
     RecoveryPasswordComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,8 @@ import {ngxLoadingAnimationTypes, NgxLoadingModule} from 'ngx-loading';
     MatGridListModule,
     MatToolbarModule,
     MatSnackBarModule,
+    MatSidenavModule,
+    MatCheckboxModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.circleSwish,
       fullScreenBackdrop: true,
@@ -66,7 +72,14 @@ import {ngxLoadingAnimationTypes, NgxLoadingModule} from 'ngx-loading';
   providers: [
     AuthGuard,
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
-    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true},
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {
+        duration: 5000,
+        horizontalPosition: 'end',
+        verticalPosition: 'bottom'
+      }
+    }
   ],
   bootstrap: [AppComponent]
 })

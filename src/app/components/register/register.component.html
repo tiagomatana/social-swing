@@ -1,3 +1,7 @@
+<mat-toolbar color="primary" class="toolbar" fxLayout="row" fxLayoutAlign="end center" mat-header-row="2">
+  <a routerLink="/" ><img src="assets/logo-sem-fundo.png" alt="" style="width: 23vh; margin-top: 20px;" ></a>
+  <span fxFlex></span>
+</mat-toolbar>
 <div class="flex-container" fxLayout="column" fxLayoutAlign="space-around center">
   <div class="section">
     <h6 class="mat-display-1">Por favor, Preencha o Formulário</h6>
@@ -82,7 +86,7 @@
         <br/>
 
         <div>
-          <button mat-raised-button color="primary" (click)="save()" fxFlex class="ripple">CADASTRAR</button>
+          <button mat-raised-button color="primary" (click)="save()" fxFlex class="ripple" [disabled]="!registerForm.valid">CADASTRAR</button>
         </div>
 
         <br/>

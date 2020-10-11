@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  local: 'http://localhost:3000/api',
-  api: 'https://social-swing.herokuapp.com/api'
+  api: 'http://localhost:3000/api',
+  server: 'https://social-swing.herokuapp.com/api'
 };
 
 /*

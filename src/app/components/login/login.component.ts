@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from '../../services/login/login.service';
-import {response} from 'express';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,10 +13,12 @@ export class LoginComponent implements OnInit {
   isShow = false;
   loading = false;
   loginForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+    email: new FormControl(null, [
+      Validators.required,
+      Validators.pattern('^[a-z0-9._%+-]{3,}@[a-z0-9.-]{2,}\\.[a-z]{2,4}$')]),
+    password: new FormControl(null, Validators.required)
   });
-  constructor(private loginService: LoginService, private snackBar: MatSnackBar) { }
+  constructor(private loginService: LoginService, private snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,20 +28,15 @@ export class LoginComponent implements OnInit {
     // tslint:disable-next-line:no-shadowed-variable
     this.loginService.login(this.loginForm).toPromise().then(response => {
       this.loginService.setToken(response.data);
+      this.router.navigate(['home']);
       this.loading = false;
     }).catch(err => {
       this.loading = false;
       this.loginForm.reset();
-      this.showMessage('Login incorreto!');
+      this.snackBar.open('Login incorreto!', 'X');
     });
   }
 
-  showMessage(msg): void {
-    this.snackBar.open(msg, 'X', {
-      duration: 3000,
-      horizontalPosition: 'end',
-      verticalPosition: 'bottom'
-    });
-  }
+
 
 }

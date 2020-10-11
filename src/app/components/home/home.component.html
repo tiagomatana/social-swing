@@ -1,0 +1,37 @@
+
+  <mat-toolbar style="background-color: transparent" class="mat-elevation-z5">
+    <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="/" ><img src="assets/logo-sem-fundo.png" alt="" style="width: 23vh; margin-top: 20px;" ></a>
+    <span fxFlex></span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with share icon">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="flex-container" fxLayout="column" fxFill>
+    <mat-sidenav-container class="example-container" fxFlexFill="" [hasBackdrop]="true" autosize>
+<!--      <md-sidenav-layout fullscreen>-->
+          <mat-sidenav #sidenav mode="side" opened="false" class="mat-primary mat-elevation-z5" fixedTopGap="64"  style="width: 35vh; background-color: #061450" >
+            Sidenav content
+          </mat-sidenav>
+
+          <mat-sidenav-content fxFlexFill>
+
+            <router-outlet></router-outlet>
+
+          </mat-sidenav-content>
+<!--      </md-sidenav-layout>-->
+
+    </mat-sidenav-container>
+
+  </div>
+
+
+
+
+

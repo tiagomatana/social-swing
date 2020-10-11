@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'https://social-swing.herokuapp.com/api'
+  api: 'https://social-swing-backend.herokuapp.com/api'
 };
