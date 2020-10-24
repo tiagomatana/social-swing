@@ -20,6 +20,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ProfileComponent } from './components/profile/profile.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
+import { NotificacaoComponent } from './components/notificacao/notificacao.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     RecoveryPasswordComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    TimelineComponent,
+    NotificacaoComponent
   ],
   imports: [
     BrowserModule,
